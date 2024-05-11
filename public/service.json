@@ -1,48 +1,52 @@
 {
-    "serviceImage": "https://example.com/service1.jpg",
-    "serviceName": "General Health Consultation",
-    "serviceDescription": "Comprehensive health assessment and advice",
-    "serviceProviderName": "Dr. Emily Johnson",
-    "serviceProviderImage": "https://example.com/doctor1.jpg",
-    "servicePrice": 80
-},
-{
-    "serviceImage": "https://example.com/service2.jpg",
-    "serviceName": "Nutrition Consultation",
-    "serviceDescription": "Personalized diet planning and guidance",
-    "serviceProviderName": "Dr. Michael Lee",
-    "serviceProviderImage": "https://example.com/doctor2.jpg",
-    "servicePrice": 60
-},
-{
-    "serviceImage": "https://example.com/service3.jpg",
-    "serviceName": "Mental Health Counseling",
-    "serviceDescription": "Emotional support and coping strategies",
-    "serviceProviderName": "Dr. Sophia Adams",
-    "serviceProviderImage": "https://example.com/doctor3.jpg",
-    "servicePrice": 100
-},
-{
-    "serviceImage": "https://example.com/service4.jpg",
-    "serviceName": "Pediatric Consultation",
-    "serviceDescription": "Child health assessment and vaccination advice",
-    "serviceProviderName": "Dr. David Miller",
-    "serviceProviderImage": "https://example.com/doctor4.jpg",
-    "servicePrice": 70
-},
-{
-    "serviceImage": "https://example.com/service5.jpg",
-    "serviceName": "Dermatology Consultation",
-    "serviceDescription": "Skin condition evaluation and treatment recommendations",
-    "serviceProviderName": "Dr. Olivia Clark",
-    "serviceProviderImage": "https://example.com/doctor5.jpg",
-    "servicePrice": 90
-},
-{
-    "serviceImage": "https://example.com/service6.jpg",
-    "serviceName": "Telemedicine Consultation",
-    "serviceDescription": "Virtual appointments for remote patients",
-    "serviceProviderName": "Dr. Daniel Smith",
-    "serviceProviderImage": "https://example.com/doctor6.jpg",
-    "servicePrice": 50
+    "services": [
+        {
+            "serviceImage": "https://example.com/service1.jpg",
+            "serviceName": "General Health Consultation",
+            "serviceDescription": "Comprehensive health assessment and advice",
+            "serviceProviderName": "Dr. Emily Johnson",
+            "serviceProviderImage": "https://example.com/doctor1.jpg",
+            "servicePrice": 80
+        },
+        {
+            "serviceImage": "https://example.com/service2.jpg",
+            "serviceName": "Nutrition Consultation",
+            "serviceDescription": "Personalized diet planning and guidance",
+            "serviceProviderName": "Dr. Michael Lee",
+            "serviceProviderImage": "https://example.com/doctor2.jpg",
+            "servicePrice": 60
+        },
+        {
+            "serviceImage": "https://example.com/service3.jpg",
+            "serviceName": "Mental Health Counseling",
+            "serviceDescription": "Emotional support and coping strategies",
+            "serviceProviderName": "Dr. Sophia Adams",
+            "serviceProviderImage": "https://example.com/doctor3.jpg",
+            "servicePrice": 100
+        },
+        {
+            "serviceImage": "https://example.com/service4.jpg",
+            "serviceName": "Pediatric Consultation",
+            "serviceDescription": "Child health assessment and vaccination advice",
+            "serviceProviderName": "Dr. David Miller",
+            "serviceProviderImage": "https://example.com/doctor4.jpg",
+            "servicePrice": 70
+        },
+        {
+            "serviceImage": "https://example.com/service5.jpg",
+            "serviceName": "Dermatology Consultation",
+            "serviceDescription": "Skin condition evaluation and treatment recommendations",
+            "serviceProviderName": "Dr. Olivia Clark",
+            "serviceProviderImage": "https://example.com/doctor5.jpg",
+            "servicePrice": 90
+        },
+        {
+            "serviceImage": "https://example.com/service6.jpg",
+            "serviceName": "Telemedicine Consultation",
+            "serviceDescription": "Virtual appointments for remote patients",
+            "serviceProviderName": "Dr. Daniel Smith",
+            "serviceProviderImage": "https://example.com/doctor6.jpg",
+            "servicePrice": 50
+        }
+    ]
 }
