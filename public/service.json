@@ -1,48 +1,66 @@
 {
-    "service_image": "https://example.com/service1.jpg",
+    "service_image": "https://i.ibb.co/872j8qy/online-marketing-h-Igeo-Qj-S-i-E-unsplash.jpg",
     "service_name": "General Health Consultation",
-    "description": "Comprehensive health assessment and advice",
+    "description": "Comprehensive health assessment and advice. During a general consultation, your doctor will listen to you, hear your concerns and advise you on all of your treatment options. A general consultation is the first step to addressing health concerns and typically lasts for 15 - 30 minutes. Their role is entirely distinct from that of a general practitioner.",
     "service_provider_name": "Dr. Emily Johnson",
-    "service_provider_image": "https://example.com/doctor1.jpg",
-    "price": 80
+    "service_provider_detail": "Dr. Emily Johnson is a skilled medicine consultant with expertise in the treatment of acute medical conditions. She is board-certified in emergency medicine and has a special interest in cardiac.",
+    "specialization": "Medicine Specialist",
+    "service_provider_image": "https://i.ibb.co/3Wc2s38/Link-doctor-1-png.png",
+    "price": 800,
+    "service_location": "New York, USA"
 },
 {
-    "service_image": "https://example.com/service2.jpg",
+    "service_image": "https://i.ibb.co/f4DHFr5/diet-concept-with-female-scientist-healthy-food.jpg",
     "service_name": "Nutrition Consultation",
-    "description": "Personalized diet planning and guidance",
+    "description": "Personalized diet planning and guidance. As a nutrition consultant, you provide sound nutritional and health advice to your clients. Clients may be private companies, individuals, or public health organizations. It's important to get a grasp on all of the topics, and we will look at the relevance of each throughout this blog.",
     "service_provider_name": "Dr. Michael Lee",
-    "service_provider_image": "https://example.com/doctor2.jpg",
-    "price": 60
+    "service_provider_detail": "Dr. Michael Lee is a renowned nutritionist with over 20 years of experience. She is board-certified in cardiology and has a special interest in the treatment of heart failure and arrhythmias.",
+    "specialization": "Nutritionist",
+    "service_provider_image": "https: //i.ibb.co/px6YvtP/Link-doctor-2-png.png",
+    "price": 600,
+    "service_location": "Dhaka, Bangladesh"
 },
 {
-    "service_image": "https://example.com/service3.jpg",
+    "service_image": "https://i.ibb.co/3Sh4KG8/full-shot-patient-psychologist.jpg",
     "service_name": "Mental Health Counseling",
-    "description": "Emotional support and coping strategies",
+    "description": "Emotional support and coping strategies with a client that combines traditional psychotherapy and problem solving with the intent of changing the problem or issue. It is a process where an individual, couple or family meet with a trained professional counsellor to talk about issues and problems that they are facing in their lives.",
     "service_provider_name": "Dr. Sophia Adams",
-    "service_provider_image": "https://example.com/doctor3.jpg",
-    "price": 100
+    "service_provider_detail": "Dr. Sophia Adams is a board-certified psychiatrist with over 10 years of experience. He has a special interest in addiction psychiatry and the treatment of substance use disorders.",
+    "specialization": "Psychiatrist",
+    "service_provider_image": "https: //i.ibb.co/tc0wHnT/Link-doctor-3-png.png",
+    "price": 1000,
+    "service_location": "Paris, France"
 },
 {
-    "service_image": "https://example.com/service4.jpg",
+    "service_image": "https://i.ibb.co/kh9bhVq/my-daughter-isn-t-afraid-pay-visit-here.jpg",
     "service_name": "Pediatric Consultation",
-    "description": "Child health assessment and vaccination advice",
+    "description": "Child health assessment and vaccination advice includes assessing the child in all parameters, appropriately treating organic disease, and making efforts to understand and manage the emotional difficulties that may be present. A pediatric patient is an individual target of healthcare services who is minor to 15 years old (in some countries 21).",
     "service_provider_name": "Dr. David Miller",
-    "service_provider_image": "https://example.com/doctor4.jpg",
-    "price": 70
+    "service_provider_detail": "Dr. David Miller is a compassionate pediatrician with over 15 years of experience. She is board-certified in pediatrics and has a special interest in preventive care and childhood development.",
+    "specialization": "Pediatrics Specialist",
+    "service_provider_image": "https: //i.ibb.co/t2CCDSv/Link-doctor-5-png.png",
+    "price": 700,
+    "service_location": "Jedda, Saudi Arabia"
 },
 {
-    "service_image": "https://example.com/service5.jpg",
+    "service_image": "https://i.ibb.co/8592ygr/client-beautician-s-appointment-consultation-face-shaping-preparation-upcoming-procedures-visual-exa.jpg",
     "service_name": "Dermatology Consultation",
-    "description": "Skin condition evaluation and treatment recommendations",
+    "description": "Skin condition evaluation and treatment recommendations. Your dermatologist will examine you, order lab tests, make a diagnosis and treat your condition with medication or a procedure. They can treat various skin conditions, such as acne, eczema, psoriasis, and skin cancer.",
     "service_provider_name": "Dr. Olivia Clark",
-    "service_provider_image": "https://example.com/doctor5.jpg",
-    "price": 90
+    "service_provider_detail": "Dr. Olivia Clark is a skilled dermatologist with expertise in the diagnosis and treatment of cardiovascular disease. He is board-certified in cardiology and has a special interest in preventive cardiology.",
+    "specialization": "Dermatologist",
+    "service_provider_image": "https: //i.ibb.co/6nwZv8Q/Link-doctor-4-png.png",
+    "price": 900,
+    "service_location": "Islamabad, Pakistan"
 },
 {
-    "service_image": "https://example.com/service6.jpg",
+    "service_image": "https://i.ibb.co/Vwm1ymB/black-student-with-toothache-pain-discussing-medical-treatment-with-doctor-during-online-videocall-m.jpg",
     "service_name": "Telemedicine Consultation",
-    "description": "Virtual appointments for remote patients",
+    "description": "Virtual appointments for remote patients. Telehealth allows healthcare providers to evaluate, diagnose, inform and treat patients without an in-person visit. Telehealth can be used to address many different needs, including illness/injury diagnosis, prescription renewal, follow-up care, and guidance or advice on overall health and wellness.",
     "service_provider_name": "Dr. Daniel Smith",
-    "service_provider_image": "https://example.com/doctor6.jpg",
-    "price": 50
+    "service_provider_detail": "Dr. Daniel Smith is a skilled emergency medicine physician with expertise in the treatment of acute medical conditions. She is board-certified in emergency medicine and has a special interest in cardiac.",
+    "specialization": "Emergency Medicine Specialist",
+    "service_provider_image": "https: //i.ibb.co/YjrHMzz/Link-doctor-7-png.png",
+    "price": 500,
+    "service_location": "Tokyo, Japan"
 }
