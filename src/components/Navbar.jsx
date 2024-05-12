@@ -96,9 +96,15 @@ const Navbar = () => {
                                         <li>
                                             <Link to='/addService'>Add Service</Link>
                                         </li>
-                                        <li><a>Manage Service</a></li>
-                                        <li><a>Booked-Services</a></li>
-                                        <li><a>Service-To-Do</a></li>
+                                        <li>
+                                            <Link to='/manageService'>Manage Service</Link>
+                                        </li>
+                                        <li>
+                                            <Link to='/bookedService'>Booked-Services</Link>
+                                        </li>
+                                        <li>
+                                            <Link to='/toDoService'>Service-To-Do</Link>
+                                        </li>
                                     </ul>
                                 </li>
                             }
@@ -128,9 +134,15 @@ const Navbar = () => {
                                         <li>
                                             <Link to='/addService'>Add Service</Link>
                                         </li>
-                                        <li><a>Manage Service</a></li>
-                                        <li><a>Booked-Services</a></li>
-                                        <li><a>Service-To-Do</a></li>
+                                        <li>
+                                            <Link to='/manageService'>Manage Service</Link>
+                                        </li>
+                                        <li>
+                                            <Link to='/bookedService'>Booked-Services</Link>
+                                        </li>
+                                        <li>
+                                            <Link to='/toDoService'>Service-To-Do</Link>
+                                        </li>
                                     </ul>
                                 </details>
                             </li>

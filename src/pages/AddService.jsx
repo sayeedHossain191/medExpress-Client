@@ -1,11 +1,14 @@
-
+import axios from "axios";
+import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 const AddService = () => {
 
-    const handleAddArt = (e) => {
+    const navigate = useNavigate()
+    const handleAddService = async (e) => {
         e.preventDefault();
 
-        const form = event.target;
+        const form = e.target;
 
         const name = form.name.value;
         const image = form.image.value;
@@ -18,9 +21,24 @@ const AddService = () => {
             image,
             area,
             description,
-            price
+            price,
+            // serviceProvider:{
+            //     name:user?.displayName,
+            //     photo:user?.photoURL
+            // }
         }
         console.log(newService)
+
+        try {
+            const { service } = await axios.post('http://localhost:5000/service', newService)
+            console.log(service)
+            navigate('/addService')
+
+            toast.success('Service added Successfully')
+        } catch (err) {
+            console.log(err)
+            toast.error(err?.message)
+        }
     }
 
     return (
@@ -28,7 +46,7 @@ const AddService = () => {
             <section className="max-w-4xl p-6 mx-auto bg-white rounded-md shadow-md dark:bg-gray-800">
                 <h2 className="text-lg font-semibold text-gray-700 capitalize dark:text-white">Account settings</h2>
 
-                <form onSubmit={handleAddArt}>
+                <form onSubmit={handleAddService}>
                     <div className="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
                         <div className='form-control'>
                             <label className="text-gray-700 dark:text-gray-200">Service Name</label>
