@@ -4,8 +4,9 @@ import { FaMapLocationDot } from "react-icons/fa6";
 const ServiceDetail = () => {
 
     const service = useLoaderData();
+
     const { service_image, service_name, description,
-        service_provider_name, service_provider_image, price, service_location, service_provider_detail, specialization, _id } = service;
+        service_provider_name, service_provider_image, price, service_location, service_provider_detail, specialization } = service;
 
     return (
         <div>
@@ -78,28 +79,24 @@ const ServiceDetail = () => {
                                 <img className="object-cover mx-2 rounded-full w-14 shrink-0 h-14 ring-4 ring-white" src={service_provider_image} alt="" />
 
                                 <div className="mx-2">
-                                    <h1 className="text-lg font-medium text-blue-500">{service_provider_name}</h1>
+                                    <h1 className="text-lg font-medium text-blue-600">{service_provider_name}</h1>
                                     <span className="text-sm text-white">{specialization}</span>
                                 </div>
                             </div>
 
-                            <div className="flex items-center justify-between mt-12 lg:justify-start">
-                                <button title="left arrow" className="p-2 text-gray-800 transition-colors duration-300 border rounded-full rtl:-scale-x-100 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800 hover:bg-gray-100">
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
-                                    </svg>
-                                </button>
+                            <div className="lg:w-full mt-10 overflow-hidden h-20 rounded-lg shadow-lg md:w-64 bg-[#0152A8]">
 
-                                <button title="right arrow" className="p-2 text-gray-800 transition-colors duration-300 border rounded-full rtl:-scale-x-100 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800 lg:mx-6 hover:bg-gray-100">
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-                                    </svg>
-                                </button>
+
+                                <div className="flex items-center justify-between px-3 py-3 bg-white">
+                                    <span className="font-bold text-gray-800">$ {price}</span>
+                                    <button className="px-2 py-2 text-xs font-semibold text-black uppercase transition-colors duration-300 transform bg-[#0FE3AF] rounded hover:bg-gray-700 dark:hover:bg-gray-600 focus:bg-gray-700 dark:focus:bg-gray-600 focus:outline-none">Book Now</button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
+
         </div>
     );
 };
