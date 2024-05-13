@@ -1,10 +1,14 @@
 import axios from "axios";
+import { useContext } from "react";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../provider/AuthProvider";
 
 const AddService = () => {
 
     const navigate = useNavigate()
+    const { user } = useContext(AuthContext)
+
     const handleAddService = async (e) => {
         e.preventDefault();
 
@@ -22,15 +26,16 @@ const AddService = () => {
             area,
             description,
             price,
-            // serviceProvider:{
-            //     name:user?.displayName,
-            //     photo:user?.photoURL
-            // }
+            serviceProvider: {
+                service_provider_name: user?.displayName,
+                service_provider_image: user?.photoURL,
+                email: user?.email
+            }
         }
         console.log(newService)
 
         try {
-            const { service } = await axios.post('http://localhost:5000/service', newService)
+            const { service } = await axios.post('http://localhost:5000/addService', newService)
             console.log(service)
             navigate('/addService')
 
@@ -42,7 +47,7 @@ const AddService = () => {
     }
 
     return (
-        <div className="font-poppins">
+        <div className="font-poppins my-20">
             <section className="max-w-4xl p-6 mx-auto bg-white rounded-md shadow-md dark:bg-gray-800">
                 <h2 className="text-lg font-semibold text-gray-700 capitalize dark:text-white">Account settings</h2>
 
@@ -72,6 +77,21 @@ const AddService = () => {
                             <label className="block text-gray-500 dark:text-gray-300">Description</label>
 
                             <textarea placeholder='description' name="description" className="block  mt-2 w-full  placeholder-gray-400/70 dark:placeholder-gray-500 rounded-lg border border-gray-200 bg-white px-4 h-32 py-2.5 text-gray-700 focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:focus:border-blue-300"></textarea>
+                        </div>
+                        <br />
+                        <div className="form-control">
+                            <label className="text-gray-700 dark:text-gray-200">Service Provider Name</label>
+                            <input type="text" placeholder='name' name="service_provider_name" defaultValue={user?.displayName} className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring" />
+                        </div>
+
+                        <div className='form-control'>
+                            <label className="text-gray-700 dark:text-gray-200">Email</label>
+                            <input placeholder='email' name="email" type="email" defaultValue={user?.email} className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring" />
+                        </div>
+
+                        <div className="form-control">
+                            <label className="text-gray-700 dark:text-gray-200">Image URL</label>
+                            <input type="url" placeholder='image_url' name="service_provider_image" defaultValue={user?.photoURL} className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring" />
                         </div>
 
                     </div>
