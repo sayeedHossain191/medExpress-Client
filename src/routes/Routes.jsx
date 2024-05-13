@@ -14,6 +14,7 @@ import PrivateRoute from "./PrivateRoute";
 import Services from "../pages/Services";
 import ManageService from "../pages/ManageService";
 import UpdateService from "../pages/UpdateService";
+import BookNow from "../pages/BookNow";
 
 const router = createBrowserRouter([
     {
@@ -42,6 +43,11 @@ const router = createBrowserRouter([
             {
                 path: '/details/:id',
                 element: <ServiceDetail />,
+                loader: ({ params }) => fetch(`http://localhost:5000/service/${params.id}`)
+            },
+            {
+                path: '/bookNow/:id',
+                element: <BookNow />,
                 loader: ({ params }) => fetch(`http://localhost:5000/service/${params.id}`)
             },
             {

@@ -19,15 +19,15 @@ const PopularService = ({ service }) => {
                         <span className="text-xs font-medium text-blue-600 dark:text-blue-400 flex justify-between">SERVICE
                             <div className="badge py-3 bg-[#0FE3AF] text-black">{service_location}</div>
                         </span>
-                        <a href="#" className="block mt-2 text-xl font-semibold text-gray-800 transition-colors duration-300 transform dark:text-white hover:text-gray-600 hover:underline" tabindex="0" role="link">{service_name}</a>
-                        <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">{description}</p>
+                        <a href="#" className="block mt-2 text-xl font-semibold text-gray-800 transition-colors duration-300 transform dark:text-white hover:text-gray-600 hover:underline" role="link">{service_name}</a>
+                        <p title={description} className="mt-2 text-sm text-gray-600 dark:text-gray-400">{description.substring(0, 150)}.....</p>
                     </div>
 
                     <div className="mt-4">
                         <div className="flex items-center">
                             <div className="flex items-center">
                                 <img className="object-cover h-10 rounded-full" src={service_provider_image} alt="Avatar" />
-                                <a href="#" className="mx-2 font-semibold text-gray-700 dark:text-gray-200" tabindex="0" role="link">{service_provider_name}</a>
+                                <a href="#" className="mx-2 font-semibold text-gray-700 dark:text-gray-200" role="link">{service_provider_name}</a>
                             </div>
                             <span className="mx-1 text-xs text-gray-600 dark:text-gray-300">21 FEB 2024</span>
                         </div>

@@ -19,12 +19,13 @@ const Home = () => {
                 </title>
             </Helmet>
 
-            <h2>Home</h2>
-            <Carousel />
-            {/* <Banner /> */}
-            <LogoSlider />
+            <div>
+                <Carousel />
+                {/* <Banner /> */}
+                <LogoSlider />
+            </div>
 
-            <div className='my-20 grid lg:grid-cols-2 sm:grid-cols-1 gap-10'>
+            <div className='my-20 grid lg:grid-cols-2 sm:grid-cols-1 gap-10 mx-20'>
                 {
                     services.map(service => <PopularService key={service._id} service={service}></PopularService>)
                 }

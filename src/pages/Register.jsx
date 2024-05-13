@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet-async";
 
 
 const Register = () => {
@@ -51,6 +52,13 @@ const Register = () => {
     return (
         <div>
             <div className='flex justify-center items-center min-h-[calc(100vh-306px)]'>
+
+                <Helmet>
+                    <title>
+                        MedExpress | Register
+                    </title>
+                </Helmet>
+
                 <div className='flex w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-lg  lg:max-w-4xl '>
                     <div className='w-full px-6 py-8 md:px-8 lg:w-1/2'>
                         <div className='flex justify-center mx-auto'>

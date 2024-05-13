@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { FaMapLocationDot } from "react-icons/fa6";
 import { Helmet } from "react-helmet-async";
 
@@ -6,7 +6,7 @@ const ServiceDetail = () => {
 
     const service = useLoaderData();
 
-    const { service_image, service_name, description,
+    const { _id, service_image, service_name, description,
         service_provider_name, service_provider_image, price, service_location, service_provider_detail, specialization } = service;
 
     return (
@@ -95,7 +95,10 @@ const ServiceDetail = () => {
 
                                 <div className="flex items-center justify-between px-3 py-3 bg-white">
                                     <span className="font-bold text-gray-800">$ {price}</span>
-                                    <button className="px-2 py-2 text-xs font-semibold text-black uppercase transition-colors duration-300 transform bg-[#0FE3AF] rounded hover:bg-gray-700 dark:hover:bg-gray-600 focus:bg-gray-700 dark:focus:bg-gray-600 focus:outline-none">Book Now</button>
+
+                                    <Link to={`/bookNow/${_id}`}><button className="px-2 py-2 text-xs font-semibold text-black uppercase transition-colors duration-300 transform bg-[#0FE3AF] rounded hover:bg-gray-700 dark:hover:bg-gray-600 focus:bg-gray-700 dark:focus:bg-gray-600 focus:outline-none">Book Now</button>
+                                    </Link>
+                                    <button className="btn" onClick={() => document.getElementById('my_modal_1').showModal()} >Modal</button>
                                 </div>
                             </div>
                         </div>
@@ -103,6 +106,23 @@ const ServiceDetail = () => {
                 </div>
             </section>
 
+
+
+            {/* Open the modal using document.getElementById('ID').showModal() method */}
+            <button className="btn" onClick={() => document.getElementById('my_modal_1').showModal()}>open modal</button>
+            <dialog id="my_modal_1" className="modal">
+                <div className="modal-box">
+                    <h3 className="font-bold text-lg">Hello!</h3>
+                    <p className="py-4">Press ESC key or click the button below to close</p>
+                    <div className="modal-action">
+                        <form method="dialog">
+                            {/* if there is a button in form, it will close the modal */}
+                            <button className="btn">Close</button> <button className="btn">Close</button>
+
+                        </form>
+                    </div>
+                </div>
+            </dialog>
         </div>
     );
 };
