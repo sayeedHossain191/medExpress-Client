@@ -1,5 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import { FaMapLocationDot } from "react-icons/fa6";
+import { Helmet } from "react-helmet-async";
 
 const ServiceDetail = () => {
 
@@ -10,6 +11,11 @@ const ServiceDetail = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>
+                    MedExpress | Service Details
+                </title>
+            </Helmet>
 
             <section className="bg-white dark:bg-gray-900 font-poppins">
                 <div className="max-w-6xl px-6 py-10 mx-auto">

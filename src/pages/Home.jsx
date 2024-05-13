@@ -3,6 +3,7 @@ import { useLoaderData } from 'react-router-dom';
 import Carousel from "../components/Carousel";
 import LogoSlider from "../components/LogoSlider";
 import PopularService from "../components/PopularService";
+import { Helmet } from 'react-helmet-async';
 
 const Home = () => {
 
@@ -11,6 +12,13 @@ const Home = () => {
 
     return (
         <div>
+
+            <Helmet>
+                <title>
+                    MedExpress | Home
+                </title>
+            </Helmet>
+
             <h2>Home</h2>
             <Carousel />
             {/* <Banner /> */}

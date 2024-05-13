@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { useRouteError } from "react-router-dom";
 
 const ErrorPage = () => {
@@ -6,6 +7,12 @@ const ErrorPage = () => {
     console.error(error);
     return (
         <div id="error-page" className="flex justify-center text-center">
+            <Helmet>
+                <title>
+                    MedExpress | Error Page
+                </title>
+            </Helmet>
+
             <div>
                 <h1 className="text-7xl">404</h1>
                 <p className="text-3xl">Sorry, an unexpected error has occurred.</p>

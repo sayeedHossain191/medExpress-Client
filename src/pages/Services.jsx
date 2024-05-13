@@ -1,6 +1,7 @@
 
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const Services = () => {
     const [services, setServices] = useState([])
@@ -18,6 +19,11 @@ const Services = () => {
 
     return (
         <div className='font-poppins my-20 grid grid-cols-1 gap-10'>
+            <Helmet>
+                <title>
+                    MedExpress | All Services
+                </title>
+            </Helmet>
 
             {
                 services.map(service => <div key={service._id} className="card card-side bg-base-100 shadow-xl">

@@ -1,6 +1,9 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import axios from "axios";
+import { Link } from "react-router-dom";
+import toast from "react-hot-toast";
+import { Helmet } from "react-helmet-async";
 
 
 const ManageService = () => {
@@ -9,43 +12,74 @@ const ManageService = () => {
     const [services, setServices] = useState([])
 
     useEffect(() => {
-        const getService = async () => {
-            const { data } = await axios(`http://localhost:5000/addService/${user?.email}`)
-            setServices(data)
-        }
+
         getService()
 
     }, [user])
 
+    const getService = async () => {
+        const { data } = await axios(`http://localhost:5000/addService/${user?.email}`)
+        setServices(data)
+    }
+
+
+    const handleDelete = async (_id) => {
+        try {
+            const { data } = await axios.delete(`http://localhost:5000/addService/${_id}`)
+
+            console.log(data)
+
+            toast.success('Service deleted Successfully')
+        } catch (err) {
+            console.log(err)
+            toast.error(err?.message)
+        }
+    }
+
     return (
         <div>
-            {
-                services.map(service => (
-                    <div key={service._id} className="max-w-sm overflow-hidden font-poppins bg-white rounded-lg shadow-lg dark:bg-gray-800 my-20 mx-auto">
+            <Helmet>
+                <title>
+                    MedExpress | Manage Service
+                </title>
+            </Helmet>
+            <div className="grid lg:grid-cols-2 md:grid-cols-1">
+                {
+                    services.map(service => (
+                        <div key={service._id} className="max-w-xl overflow-hidden font-poppins bg-white rounded-lg shadow-lg dark:bg-gray-800 my-20 mx-auto">
 
-                        <div className="flex items-center my-4 ml-4 gap-x-2">
-                            <img className="object-cover w-12 h-12 rounded-full" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=faceare&facepad=3&w=688&h=688&q=100" alt="" />
+                            <div className="flex items-center my-4 ml-4 gap-x-2">
+                                <img className="object-cover w-12 h-12 rounded-full" src={user?.photoURL} alt="" />
 
-                            <div>
-                                <h1 className="text-xl font-semibold text-gray-700 capitalize dark:text-white">{service.service_provider_name}</h1>
+                                <div className="pl-2">
+                                    <h1 className="text-xl font-semibold text-gray-700 capitalize dark:text-white">{user?.displayName}</h1>
 
-                                <p className="text-sm text-gray-500 dark:text-gray-400">{user?.email}</p>
+                                    <p className="text-sm text-gray-500 dark:text-gray-400">{user?.email}</p>
+                                </div>
+                            </div>
+
+                            <img className="object-cover w-full h-60 mt-2" src={service.image} alt="NIKE AIR" />
+
+                            <div className="flex justify-between items-center">
+                                <h2 className="pt-4 pl-2 text-xl font-semibold text-gray-800 dark:text-white md:mt-0">{service.name}</h2>
+                                <h2 className="pt-4 pr-2">{service.area}</h2>
+                            </div>
+
+                            <p className="my-4 px-2  text-sm text-gray-600 dark:text-gray-200">{service.description}</p>
+
+                            <div className="flex items-center justify-between px-4 py-4 bg-gray-900">
+                                <h1 className="text-lg font-bold text-white">$ {service.price}</h1>
+
+                                <div className="flex gap-4">
+                                    <Link to={`/updateService/${service._id}`}><button className="btn bg-[#0152A8] text-white">Update</button>
+                                    </Link>
+                                    <button onClick={() => handleDelete(service._id)} className="btn bg-[#0FE3AF] text-black">Delete</button>
+                                </div>
                             </div>
                         </div>
-
-                        <img className="object-cover w-full h-48 mt-2" src={service.image} alt="NIKE AIR" />
-
-                        <h2 className="pt-2 pl-2 text-xl font-semibold text-gray-800 dark:text-white md:mt-0">{service.name}</h2>
-
-                        <p className="my-4 pl-2 text-sm text-gray-600 dark:text-gray-200">{service.description}</p>
-
-                        <div className="flex items-center justify-between px-4 py-4 bg-gray-900">
-                            <h1 className="text-lg font-bold text-white">$129</h1>
-                            <button className="px-2 py-1 text-xs font-semibold text-gray-900 uppercase transition-colors duration-300 transform bg-white rounded hover:bg-gray-200 focus:bg-gray-400 focus:outline-none">Add to cart</button>
-                        </div>
-                    </div>
-                ))
-            }
+                    ))
+                }
+            </div>
         </div>
     );
 };

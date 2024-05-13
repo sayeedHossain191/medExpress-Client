@@ -55,11 +55,12 @@ const router = createBrowserRouter([
                 element: <PrivateRoute>
                     <ManageService />
                 </PrivateRoute>,
-                loader: () => fetch(`http://localhost:5000/addService`)
+                //loader: () => fetch(`http://localhost:5000/addService`)
             },
             {
-                path: '/updateService',
-                element: <UpdateService />
+                path: '/updateService/:id',
+                element: <UpdateService />,
+                loader: ({ params }) => fetch(`http://localhost:5000/addService/${params.id}`)
             },
 
         ]
