@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react"
 import { AuthContext } from "../provider/AuthProvider"
 import { Link } from "react-router-dom"
+import { FaTruckMedical } from "react-icons/fa6";
 
 const Navbar = () => {
 
@@ -36,66 +37,6 @@ const Navbar = () => {
 
     return (
         <div>
-            {/* <div className='navbar bg-base-100 shadow-sm container px-4 mx-auto'>
-                <div className='flex-1'>
-                    <Link to='/' className='flex gap-2 items-center'>
-                        <img className='w-auto h-7' src='' alt='' />
-                        <span className='font-bold'>SoloSphere</span>
-                    </Link>
-                </div>
-                <div className='flex-none'>
-                    <ul className='menu menu-horizontal px-1'>
-                        <li>
-                            <Link to='/'>Home</Link>
-                        </li>
-                        <li>
-                            <Link to='/services'>Services</Link>
-                        </li>
-                        <li>
-                            <details>
-                                <summary>
-                                    Parent
-                                </summary>
-                                <ul className="p-2 bg-base-100 rounded-t-none">
-                                    <li><a>Link 1</a></li>
-                                    <li><a>Link 2</a></li>
-                                </ul>
-                            </details>
-                        </li>
-
-                        {!user && <li>
-                            <Link to='/login'>Login</Link>
-                        </li>}
-                    </ul>
-
-                    {user &&
-                        <div className='dropdown dropdown-end z-50'>
-                            <div
-                                tabIndex={0}
-                                role='button'
-                                className='btn btn-ghost btn-circle avatar'
-                            >
-                                <div title={user?.displayName} className='w-10 rounded-full'>
-                                    <img
-                                        referrerPolicy='no-referrer'
-                                        alt='User Profile Photo'
-                                        src={user?.photoURL}
-                                    />
-                                </div>
-                            </div>
-                            <ul
-                                tabIndex={0}
-                                className='menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52'
-                            >
-
-                                <li className='mt-2'>
-                                    <button onClick={logOut} className='bg-gray-200 block text-center'>Logout</button>
-                                </li>
-                            </ul>
-                        </div>}
-                </div>
-            </div> */}
-
 
             <div className="navbar bg-base-100 container px-4 mx-auto font-poppins">
                 <div className="navbar-start">
@@ -135,7 +76,8 @@ const Navbar = () => {
                     <div className='flex-1'>
                         <Link to='/' className='flex gap-2 items-center'>
                             <img className='w-auto h-7' src='' alt='' />
-                            <span className='font-bold'>MedExpress</span>
+                            <FaTruckMedical className='w-auto h-7 text-[#0FE3AF]' />
+                            <span className='font-bold text-[#0152A8]'>MedExpress</span>
                         </Link>
                     </div>
                 </div>
@@ -156,7 +98,7 @@ const Navbar = () => {
                             user && <li className="z-50">
                                 <details>
                                     <summary>Dashboard</summary>
-                                    <ul className="p-2 w-full">
+                                    <ul className="p-2 w-44">
                                         <li>
                                             <Link to='/addService'>Add Service</Link>
                                         </li>

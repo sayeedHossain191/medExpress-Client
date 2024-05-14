@@ -2,6 +2,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
+import ManageService from './ManageService';
 
 const Services = () => {
     const [services, setServices] = useState([])
@@ -48,6 +49,7 @@ const Services = () => {
                 </div>)
             }
 
+            <ManageService />
         </div>
     );
 };

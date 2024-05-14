@@ -11,7 +11,8 @@ import toast from 'react-hot-toast';
 const ServiceDetail = () => {
 
     const [startDate, setStartDate] = useState(new Date());
-    const { user } = useContext(AuthContext)
+
+    const { user } = useContext(AuthContext);
     const service = useLoaderData();
 
     const { _id, service_image, service_name, description,
@@ -159,8 +160,6 @@ const ServiceDetail = () => {
 
 
 
-            {/* Open the modal using document.getElementById('ID').showModal() method */}
-            {/* <button className="btn" onClick={() => document.getElementById('my_modal_1').showModal()}>open modal</button> */}
             <dialog id="my_modal_1" className="modal">
                 <div className="modal-box max-w-5xl bg-slate-400">
                     <h3 className="font-bold text-lg text-center">Book Now</h3>

@@ -6,8 +6,9 @@ import { useLoaderData, useNavigate } from 'react-router-dom';
 const UpdateService = () => {
 
     const service = useLoaderData();
-
+    //const { user } = useContext(AuthContext)
     const { _id, image, name, description, price, area } = service || {}
+    console.log(service)
 
     const navigate = useNavigate()
 
@@ -28,10 +29,6 @@ const UpdateService = () => {
             area,
             description,
             price
-            // serviceProvider:{
-            //     name:user?.displayName,
-            //     photo:user?.photoURL
-            // }
         }
         console.log(updateService)
 
