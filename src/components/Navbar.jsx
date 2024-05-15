@@ -77,7 +77,7 @@ const Navbar = () => {
                         <Link to='/' className='flex gap-2 items-center'>
                             <img className='w-auto h-7' src='' alt='' />
                             <FaTruckMedical className='w-auto h-7 text-[#0FE3AF]' />
-                            <span className='font-bold text-[#0152A8]'>MedExpress</span>
+                            <span className='font-bold text-lg text-[#0152A8]'>MedExpress</span>
                         </Link>
                     </div>
                 </div>

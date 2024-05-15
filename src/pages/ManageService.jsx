@@ -4,7 +4,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import toast from "react-hot-toast";
 import { Helmet } from "react-helmet-async";
-
+import background from '../assets/lastPhoto.png'
 
 const ManageService = () => {
 
@@ -44,6 +44,17 @@ const ManageService = () => {
                     MedExpress | Manage Service
                 </title>
             </Helmet>
+
+            <div className="hero font-poppins" style={{ backgroundImage: `url(${background})` }}>
+                <div className="hero-overlay bg-opacity-60"></div>
+                <div className="hero-content text-center text-neutral-content">
+                    <div className="max-w-lg">
+                        <h1 className="my-10 text-5xl font-bold">Your Added Services</h1>
+
+                    </div>
+                </div>
+            </div>
+
             <div className="grid lg:grid-cols-2 md:grid-cols-1">
                 {
                     services.map(service => (

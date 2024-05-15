@@ -4,6 +4,7 @@ import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import { Helmet } from "react-helmet-async";
+import background from '../assets/lastPhoto.png'
 
 const AddService = () => {
 
@@ -48,7 +49,7 @@ const AddService = () => {
     }
 
     return (
-        <div className="font-poppins my-20">
+        <div className="font-poppins">
 
             <Helmet>
                 <title>
@@ -56,7 +57,18 @@ const AddService = () => {
                 </title>
             </Helmet>
 
-            <section className="max-w-4xl p-6 mx-auto bg-gray-500 rounded-md shadow-md">
+            <div className="hero font-poppins" style={{ backgroundImage: `url(${background})` }}>
+                <div className="hero-overlay bg-opacity-60"></div>
+                <div className="hero-content text-center text-neutral-content">
+                    <div className="max-w-lg">
+                        <h1 className="my-10 text-5xl font-bold">Share Your Service With US</h1>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <section className="max-w-4xl p-6 mx-auto bg-gray-500 rounded-md shadow-md my-20">
                 <h2 className="text-lg font-semibold  capitalize dark:text-white">Account settings</h2>
 
                 <form onSubmit={handleAddService}>
