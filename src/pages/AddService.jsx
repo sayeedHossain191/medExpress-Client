@@ -36,7 +36,7 @@ const AddService = () => {
         console.log(newService)
 
         try {
-            const { service } = await axios.post('http://localhost:5000/addService', newService)
+            const { service } = await axios.post('https://b9a11-consultation-server.vercel.app/addService', newService)
             console.log(service)
             navigate('/addService')
 

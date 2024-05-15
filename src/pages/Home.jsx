@@ -1,9 +1,10 @@
 //import Banner from "../components/Banner";
 import { useLoaderData } from 'react-router-dom';
-import Carousel from "../components/Carousel";
+//import Carousel from "../components/Carousel";
 import LogoSlider from "../components/LogoSlider";
 import PopularService from "../components/PopularService";
 import { Helmet } from 'react-helmet-async';
+import Banner from '../components/Banner';
 
 const Home = () => {
 
@@ -20,8 +21,8 @@ const Home = () => {
             </Helmet>
 
             <div>
-                <Carousel />
-                {/* <Banner /> */}
+                {/* <Carousel /> */}
+                <Banner />
                 <LogoSlider />
             </div>
 

@@ -33,7 +33,7 @@ const UpdateService = () => {
         console.log(updateService)
 
         try {
-            const { data } = await axios.put(`http://localhost:5000/addService/${_id}`, updateService)
+            const { data } = await axios.put(`https://b9a11-consultation-server.vercel.app/addService/${_id}`, updateService)
 
             console.log(data)
             navigate('/manageService')

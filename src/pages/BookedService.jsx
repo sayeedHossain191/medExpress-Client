@@ -12,7 +12,7 @@ const BookedService = () => {
     useEffect(() => {
 
         const getService = async () => {
-            const { data } = await axios(`http://localhost:5000/bookedService/${user?.email}`)
+            const { data } = await axios(`https://b9a11-consultation-server.vercel.app/bookedService/${user?.email}`)
             setServices(data)
         }
 

@@ -26,7 +26,7 @@ const router = createBrowserRouter([
             {
                 index: true,
                 element: <Home />,
-                loader: () => fetch(`http://localhost:5000/service`)
+                loader: () => fetch(`https://b9a11-consultation-server.vercel.app/service`)
             },
             {
                 path: '/login',
@@ -39,12 +39,12 @@ const router = createBrowserRouter([
             {
                 path: '/services',
                 element: <Services />,
-                //loader: () => fetch(`http://localhost:5000/service`)
+                loader: () => fetch(`https://b9a11-consultation-server.vercel.app/serviceCount`)
             },
             {
                 path: '/details/:id',
                 element: <ServiceDetail />,
-                loader: ({ params }) => fetch(`http://localhost:5000/service/${params.id}`)
+                loader: ({ params }) => fetch(`https://b9a11-consultation-server.vercel.app/service/${params.id}`)
             },
             {
                 path: "/bookedService",
@@ -63,19 +63,19 @@ const router = createBrowserRouter([
                 element: <PrivateRoute>
                     <ManageService />
                 </PrivateRoute>,
-                //loader: () => fetch(`http://localhost:5000/addService`)
+                //loader: () => fetch(`https://b9a11-consultation-server.vercel.app/addService`)
             },
             {
                 path: '/updateService/:id',
                 element: <UpdateService />,
-                loader: ({ params }) => fetch(`http://localhost:5000/addService/${params.id}`)
+                loader: ({ params }) => fetch(`https://b9a11-consultation-server.vercel.app/addService/${params.id}`)
             },
             {
                 path: '/toDoService',
                 element: <PrivateRoute>
                     <ServiceToDo />
                 </PrivateRoute>
-                //loader: () => fetch(`http://localhost:5000/service`)
+                //loader: () => fetch(`https://b9a11-consultation-server.vercel.app/service`)
             }
 
         ]

@@ -51,7 +51,7 @@ const ServiceDetail = () => {
         console.table(serviceData)
 
         try {
-            const { service } = await axios.post('http://localhost:5000/bookedService', serviceData)
+            const { service } = await axios.post('https://b9a11-consultation-server.vercel.app/bookedService', serviceData)
             console.log(service)
 
             toast.success('Service Purchased')

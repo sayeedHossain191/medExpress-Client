@@ -18,14 +18,14 @@ const ManageService = () => {
     }, [user])
 
     const getService = async () => {
-        const { data } = await axios(`http://localhost:5000/addService/${user?.email}`)
+        const { data } = await axios(`https://b9a11-consultation-server.vercel.app/addService/${user?.email}`)
         setServices(data)
     }
 
 
     const handleDelete = async (_id) => {
         try {
-            const { data } = await axios.delete(`http://localhost:5000/addService/${_id}`)
+            const { data } = await axios.delete(`https://b9a11-consultation-server.vercel.app/addService/${_id}`)
 
             console.log(data)
 
