@@ -3,6 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import toast from "react-hot-toast";
 import { Helmet } from "react-helmet-async";
+import { FaTruckMedical } from "react-icons/fa6";
+import background from '../assets/14553.jpg'
 
 
 const Register = () => {
@@ -51,7 +53,7 @@ const Register = () => {
 
     return (
         <div>
-            <div className='flex justify-center items-center min-h-[calc(100vh-306px)]'>
+            <div className='flex justify-center items-center min-h-[calc(100vh-306px)] my-20'>
 
                 <Helmet>
                     <title>
@@ -59,14 +61,15 @@ const Register = () => {
                     </title>
                 </Helmet>
 
-                <div className='flex w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-lg  lg:max-w-4xl '>
+                <div className='flex w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-lg  lg:max-w-4xl font-poppins'>
                     <div className='w-full px-6 py-8 md:px-8 lg:w-1/2'>
                         <div className='flex justify-center mx-auto'>
-                            <img
+                            {/* <img
                                 className='w-auto h-7 sm:h-8'
                                 src='https://merakiui.com/images/logo.svg'
                                 alt=''
-                            />
+                            /> */}
+                            <FaTruckMedical className='w-auto h-8 text-[#0FE3AF]' />
                         </div>
 
                         <p className='mt-3 text-xl text-center text-gray-600 '>
@@ -200,7 +203,7 @@ const Register = () => {
                     <div
                         className='hidden bg-cover bg-center lg:block lg:w-1/2'
                         style={{
-                            backgroundImage: `url('https://images.unsplash.com/photo-1606660265514-358ebbadc80d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1575&q=80')`,
+                            backgroundImage: `url(${background})`,
                         }}
                     ></div>
                 </div>

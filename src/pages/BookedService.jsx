@@ -29,7 +29,7 @@ const BookedService = () => {
             </Helmet>
 
 
-            <div className="font-poppins my-20">
+            <div className="font-poppins">
                 <section className="container px-4 mx-auto">
                     <div className="flex items-center gap-x-3">
                         <h2 className="text-lg font-medium text-gray-800">Service Booked</h2>

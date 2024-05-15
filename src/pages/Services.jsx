@@ -2,42 +2,56 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { useLoaderData } from 'react-router-dom';
+//import { useLoaderData } from 'react-router-dom';
 
 const Services = () => {
-    const [services, setServices] = useState([])
-    const [currentPage, setCurrentPage] = useState(0)
+
     const [servicePerPage, setServicePerPage] = useState(3)
+    const [currentPage, setCurrentPage] = useState(1)
+    const [count, setCount] = useState(0)
+    const [services, setServices] = useState([])
 
-    const { count } = useLoaderData();
-    // const servicePerPage = 3;
-    const numberOfPage = Math.ceil(count / servicePerPage)
+    //const { count } = useLoaderData();
 
-    // const pages = [];
-    // for (let i = 0; i, numberOfPage; i++) {
-    //     pages.push(i)
-    // }
-
-    const pages = [...Array(numberOfPage).keys()];
+    const numberOfPages = Math.ceil(count / servicePerPage)
+    const pages = [...Array(numberOfPages).keys()].map(element => element + 1);
 
     useEffect(() => {
         const getService = async () => {
             // const { data } = await axios(`https://b9a11-consultation-server.vercel.app/service`)
-            const { data } = await axios(`https://b9a11-consultation-server.vercel.app/service?page=${currentPage}&sixe=${servicePerPage}`)
+            const { data } = await axios(`https://b9a11-consultation-server.vercel.app/all-service?page=${currentPage}&size=${servicePerPage}`)
+
             setServices(data)
         }
         getService()
 
     }, [currentPage, servicePerPage])
-    // const { service_image, service_name, description,
-    //     service_provider_name, service_provider_image, price, service_location, specialization } = allServices
 
-    const handleServicePerPage = (e) => {
-        const val = parseInt(e.target.value);
-        console.log(val)
-        setServicePerPage(val)
-        setCurrentPage(0)
+
+    useEffect(() => {
+        const getCount = async () => {
+
+            const { data } = await axios(`https://b9a11-consultation-server.vercel.app/service-count`)
+
+            setCount(data.count)
+        }
+        getCount()
+
+    }, [])
+
+    console.log(count)
+
+    const handlePagination = (page) => {
+        setCurrentPage(page)
     }
+
+
+    // const handleServicePerPage = (e) => {
+    //     const val = parseInt(e.target.value);
+    //     console.log(val)
+    //     setServicePerPage(val)
+    //     setCurrentPage(0)
+    // }
 
     const handlePrevPage = () => {
         if (currentPage > 0) {
@@ -86,7 +100,9 @@ const Services = () => {
             <div className='mx-auto'>
 
                 <div className="flex">
-                    <a onClick={handlePrevPage} href="#" className="px-4 py-2 mx-1 text-gray-700 transition-colors duration-300 transform bg-white rounded-md dark:bg-gray-800 dark:text-gray-200 hover:bg-blue-500 dark:hover:bg-blue-500 hover:text-white dark:hover:text-gray-200">
+
+                    {/* Previous Button */}
+                    <button disabled={currentPage === 1} onClick={handlePrevPage} href="#" className="px-4 py-2 mx-1 text-gray-700 transition-colors duration-300 transform bg-white rounded-md dark:bg-gray-800 dark:text-gray-200 hover:bg-blue-500 dark:hover:bg-blue-500 hover:text-white dark:hover:text-gray-200">
                         <div className="flex items-center -mx-1">
                             <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 mx-1 rtl:-scale-x-100" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path d="M7 16l-4-4m0 0l4-4m-4 4h18" />
@@ -96,17 +112,18 @@ const Services = () => {
                                 previous
                             </span>
                         </div>
-                    </a>
+                    </button>
 
                     {
-                        pages.map(page => <a onClick={() => setCurrentPage(page)}
-                            key={page} href="#" className="hidden px-4 py-2 mx-1 text-gray-700 transition-colors duration-300 transform bg-white rounded-md sm:inline dark:bg-gray-800 dark:text-gray-200 hover:bg-blue-500 dark:hover:bg-blue-500 hover:text-white dark:hover:text-gray-200">
+                        pages.map(page => <button onClick={() => handlePagination(page)}
+                            key={page} href="#" className={`hidden
+                            ${currentPage === page ? 'bg-[#0152A8]' : ''} px-4 py-2 mx-1 text-gray-700 transition-colors duration-300 transform bg-white rounded-md sm:inline dark:bg-gray-800 dark:text-gray-200 hover:bg-blue-500 dark:hover:bg-blue-500 hover:text-white dark:hover:text-gray-200`}>
                             {page}
-                        </a>)
+                        </button>)
                     }
 
-
-                    <a onClick={handleNextPage} href="#" className="px-4 py-2 mx-1 text-gray-700 transition-colors duration-300 transform bg-white rounded-md dark:bg-gray-800 dark:text-gray-200 hover:bg-blue-500 dark:hover:bg-blue-500 hover:text-white dark:hover:text-gray-200">
+                    {/* Next Page */}
+                    <button disabled={currentPage === numberOfPages} onClick={handleNextPage} href="#" className="px-4 py-2 mx-1 text-gray-700 transition-colors duration-300 transform bg-white rounded-md dark:bg-gray-800 dark:text-gray-200 hover:bg-blue-500 dark:hover:bg-blue-500 hover:text-white dark:hover:text-gray-200">
                         <div className="flex items-center -mx-1">
                             <span className="mx-1">
                                 Next
@@ -116,13 +133,13 @@ const Services = () => {
                                 <path d="M17 8l4 4m0 0l-4 4m4-4H3" />
                             </svg>
                         </div>
-                    </a>
+                    </button>
 
-                    <select value={servicePerPage} onChange={handleServicePerPage} name="" id="">
+                    {/* <select value={servicePerPage} onChange={handleServicePerPage} name="" id="">
                         <option value="5">5</option>
                         <option value="6">10</option>
                         <option value="7">15</option>
-                    </select>
+                    </select> */}
                 </div>
             </div>
         </div>
