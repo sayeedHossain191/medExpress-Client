@@ -60,7 +60,7 @@ const Services = () => {
     }
 
     const handleNextPage = () => {
-        if (currentPage < pages.length - 1) {
+        if (currentPage < pages.length) {
             setCurrentPage(currentPage + 1)
         }
     }

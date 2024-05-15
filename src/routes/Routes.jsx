@@ -39,7 +39,7 @@ const router = createBrowserRouter([
             {
                 path: '/services',
                 element: <Services />,
-                loader: () => fetch(`https://b9a11-consultation-server.vercel.app/serviceCount`)
+                loader: () => fetch(`https://b9a11-consultation-server.vercel.app/service-count`)
             },
             {
                 path: '/details/:id',

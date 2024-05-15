@@ -7,7 +7,7 @@ const UpdateService = () => {
 
     const service = useLoaderData();
     //const { user } = useContext(AuthContext)
-    const { _id, image, name, description, price, area } = service || {}
+    const { _id, image, name, description, price, area } = service
     console.log(service)
 
     const navigate = useNavigate()

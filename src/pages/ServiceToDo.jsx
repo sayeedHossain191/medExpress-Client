@@ -1,23 +1,40 @@
-// import axios from 'axios';
-// import { useEffect, useState } from 'react';
+import axios from 'axios';
+import { useContext, useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 
 import image from '../assets/scan.png'
+import { AuthContext } from '../provider/AuthProvider';
+
 
 const ServiceToDo = () => {
 
-    // const [services, setServices] = useState([])
+    const { user } = useContext(AuthContext)
+    const [services, setServices] = useState([])
+    const [filter, setFilter] = useState('')
 
-    // useEffect(() => {
+    useEffect(() => {
 
-    //     const getService = async () => {
-    //         const { data } = await axios(`https://b9a11-consultation-server.vercel.app/bookedService/${user?.email}`)
-    //         setServices(data)
-    //     }
-    //     console.log(services)
-    //     getService()
+        const getService = async () => {
+            const { data } = await axios(`https://b9a11-consultation-server.vercel.app/bookedService/${user?.email}`)
+            setServices(data)
+        }
 
-    // }, [user])
+        getService()
+
+    }, [user, filter])
+
+
+    useEffect(() => {
+
+        const getService = async () => {
+            const { data } = await axios(`https://b9a11-consultation-server.vercel.app/service-filter/${user?.email}&filter=${filter}`)
+            setServices(data)
+        }
+
+        getService()
+
+    }, [filter])
+
 
     return (
         <div>
@@ -43,7 +60,10 @@ const ServiceToDo = () => {
                     <div className="card-body">
 
                         <div className='flex justify-between'>
-                            <select className="select select-bordered w-full max-w-xs">
+                            <select onChange={e => setFilter(e.target.value)} value={filter}
+                                name='category'
+                                id='category'
+                                className="select select-bordered w-full max-w-xs" >
                                 <option disabled selected>Find by Category</option>
                                 <option>Pending</option>
                                 <option>Working</option>
@@ -63,6 +83,26 @@ const ServiceToDo = () => {
                 </div>
 
             </div>
+
+            <div>
+                {
+                    services.map(service => <div key={service._id} className="card w-96 bg-base-100 shadow-xl">
+                        <figure><img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
+                        <div className="card-body">
+                            <h2 className="card-title">
+                                Shoes!
+                                <div className="badge badge-secondary">{service.status}</div>
+                            </h2>
+                            <p>If a dog chews shoes whose shoes does he choose?</p>
+                            <div className="card-actions justify-end">
+                                <div className="badge badge-outline">Fashion</div>
+                                <div className="badge badge-outline">Products</div>
+                            </div>
+                        </div>
+                    </div>)
+                }
+            </div>
+
         </div>
     );
 };

@@ -18,7 +18,8 @@ const ManageService = () => {
     }, [user])
 
     const getService = async () => {
-        const { data } = await axios(`https://b9a11-consultation-server.vercel.app/addService/${user?.email}`)
+        const { data } = await axios.get(`https://b9a11-consultation-server.vercel.app/addService/${user?.email}`)
+
         setServices(data)
     }
 
